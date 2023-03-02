@@ -9,8 +9,8 @@ export default function App() {
       <GlobalStyle />
       <Container>
         <Perguntas />
-        <Inferior />
       </Container>
+      <Inferior />
     </>
   );
 }
@@ -19,5 +19,4 @@ const Container = styled.div`
   width: 375px;
   height: 667px;
   background-color: #fb6b6b;
-  position: relative;
 `

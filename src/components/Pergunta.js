@@ -42,6 +42,7 @@ const CaixaPergunta = styled.div`
     padding: 0 15px;
     font-weight: 700;
     font-size: 16px;
+    margin-bottom: 25px;
 `
 const PerguntaAberta = styled.div`
     height: 131px;
@@ -54,6 +55,7 @@ const PerguntaAberta = styled.div`
     border-radius: 5px;
     box-shadow: 0px 4px 5px rgba(0,0,0,0.15);
     position: relative;
+    margin-bottom: 25px;
     img{
         position: absolute;
         right: 15px;
@@ -94,5 +96,6 @@ const Resposta = styled.div`
     border-radius: 5px;
     box-shadow: 0px 4px 5px rgba(0,0,0,0.15);
     gap: 20px;
+    margin-bottom: 25px;
     
 `
