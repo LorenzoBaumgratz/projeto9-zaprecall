@@ -10,20 +10,20 @@ export default function Pergunta(props) {
 
     return (
         <>
-            <CaixaPergunta abrir={abrir} abrirResposta={abrirResposta}>
-                Pergunta {props.numero}
-                <img src={play} alt="play" onClick={() => setAbrir(true)} />
+            <CaixaPergunta  data-test="flashcard"abrir={abrir} abrirResposta={abrirResposta}>
+                <span data-test="flashcard-text">Pergunta {props.numero}</span>
+                <img data-test="play-btn" src={play} alt="play" onClick={() => setAbrir(true)} />
             </CaixaPergunta>
             <PerguntaAberta abrir={abrir} abrirResposta={abrirResposta}>
-                {props.question}
-                <img src={virar} alt="icone" onClick={() => setAbrirResposta(true)} />
+                <span data-test="flashcard-text">{props.question}</span>
+                <img data-test="turn-btn" src={virar} alt="icone" onClick={() => setAbrirResposta(true)} />
             </PerguntaAberta>
             <Resposta abrir={abrir} abrirResposta={abrirResposta}>
-                {props.answer}
+                <span data-test="flashcard-text">{props.answer}</span>
                 <CaixaBotoes>
-                    <Button cor={"#FF3030"}>Não lembrei</Button>
-                    <Button cor={"#FF922E"}>Quase não lembrei</Button>
-                    <Button cor={"#2FBE34"}>Zap!</Button>
+                    <Button data-test="no-btn" cor={"#FF3030"}>Não lembrei</Button>
+                    <Button data-test="partial-btn" cor={"#FF922E"}>Quase não lembrei</Button>
+                    <Button data-test="zap-btn" cor={"#2FBE34"}>Zap!</Button>
                 </CaixaBotoes>
             </Resposta>
         </>
@@ -40,17 +40,17 @@ const CaixaPergunta = styled.div`
     box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
     border-radius: 5px;
     padding: 0 15px;
+    margin-bottom: 25px;
+    span{
     font-weight: 700;
     font-size: 16px;
-    margin-bottom: 25px;
+    }
 `
 const PerguntaAberta = styled.div`
     height: 131px;
     width: 299px ;
     background-color: #ffffd4;
     display: ${(props) => props.abrir && !props.abrirResposta? "" : "none"};
-    font-weight: 400;
-    font-size: 18px;
     padding: 15px;
     border-radius: 5px;
     box-shadow: 0px 4px 5px rgba(0,0,0,0.15);
@@ -62,6 +62,10 @@ const PerguntaAberta = styled.div`
         bottom: 6px;
         width: 30px;
         height: 20px;
+    }
+    span{
+    font-weight: 400;
+    font-size: 18px;
     }
 `
 
@@ -97,5 +101,9 @@ const Resposta = styled.div`
     box-shadow: 0px 4px 5px rgba(0,0,0,0.15);
     gap: 20px;
     margin-bottom: 25px;
+    span{
+    font-weight: 400;
+    font-size: 18px;
+    }
     
 `

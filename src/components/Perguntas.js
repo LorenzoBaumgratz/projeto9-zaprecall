@@ -53,6 +53,5 @@ const ContainerPerguntas=styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    overflow-y: scroll;
     padding-bottom: 70px;
 `
