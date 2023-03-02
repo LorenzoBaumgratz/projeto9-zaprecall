@@ -1,6 +1,6 @@
 import { useState } from "react"
 import styled from "styled-components"
-import play1 from "../assets/seta_play.png"
+import play from "../assets/seta_play.png"
 import virar from "../assets/seta_virar.png"
 
 export default function Pergunta(props) {
@@ -12,7 +12,7 @@ export default function Pergunta(props) {
         <>
             <CaixaPergunta abrir={abrir} abrirResposta={abrirResposta}>
                 Pergunta {props.numero}
-                <img src={play1} alt="play" onClick={() => setAbrir(true)} />
+                <img src={play} alt="play" onClick={() => setAbrir(true)} />
             </CaixaPergunta>
             <PerguntaAberta abrir={abrir} abrirResposta={abrirResposta}>
                 {props.question}
