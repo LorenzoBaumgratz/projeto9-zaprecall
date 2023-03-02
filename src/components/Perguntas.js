@@ -22,8 +22,9 @@ export default function Perguntas() {
                 <p>ZapRecall</p>
             </Superior>
             <ContainerPerguntas>
-                {cards.map((p,i)=><Pergunta numero={i+1} question={p.question} answer={p.answer}/>)}
+                {cards.map((p,i)=><Pergunta key={i} numero={i+1} question={p.question} answer={p.answer}/>)}
             </ContainerPerguntas>
+
         </>
     )
 }
@@ -52,5 +53,6 @@ const ContainerPerguntas=styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
     gap: 25px;
 `
