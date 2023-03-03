@@ -1,22 +1,29 @@
+import { useState } from "react";
 import styled from "styled-components";
 import Inferior from "./components/Inferior";
 import Perguntas from "./components/Perguntas";
 import GlobalStyle from "./styles/globalStyles";
 
 export default function App() {
+  const [quantidade,setQuantidade]=useState(0);
+  const [quantidadeTotal,setQuantidadeTotal]=useState(0);
+
+  function aumentarQnt(){
+    setQuantidade(quantidade+1);
+  }
+
   return (
+    
     <>
       <GlobalStyle />
-      <Container>
-        <Perguntas />
+      <Container >
+        <Perguntas aumentarQnt={aumentarQnt} setQuantidadeTotal={setQuantidadeTotal}/>
       </Container>
-      <Inferior />
+      <Inferior quantidade={quantidade} quantidadeTotal={quantidadeTotal}/>
     </>
   );
 }
 
 const Container = styled.div`
-  width: 375px;
-  height: 667px;
   background-color: #fb6b6b;
 `

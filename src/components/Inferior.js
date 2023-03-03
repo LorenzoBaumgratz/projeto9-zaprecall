@@ -1,9 +1,9 @@
 import styled from "styled-components"
 
-export default function Inferior(){
+export default function Inferior(props){
     return(
         <CaixaInferior>
-            <span>0/4 CONCLUÍDOS</span>
+            <span>{props.quantidade}/{props.quantidadeTotal} CONCLUÍDOS</span>
         </CaixaInferior>
     )
 }

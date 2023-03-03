@@ -3,7 +3,7 @@ import logo from "../assets/logo.png"
 import Pergunta from "./Pergunta"
 
 
-export default function Perguntas() {
+export default function Perguntas(props) {
     const cards = [
         { question: "O que é JSX?", answer: "Uma extensão da linguagem JavaScript" },
         { question: "O React é __", answer: "Uma biblioteca JavaScript para construção de interfaces" },
@@ -14,6 +14,8 @@ export default function Perguntas() {
         { question: "Usamos props para __", answer: "Passar diferentes informações para componentes" },
         { question: "Usamos estado (state) para __", answer: "Dizer para o React quais informações quando atualizadas devem renderizar a tela novamente" }
     ]
+
+    props.setQuantidadeTotal(cards.length);
     
     return (
         <>
@@ -22,7 +24,7 @@ export default function Perguntas() {
                 <p>ZapRecall</p>
             </Superior>
             <ContainerPerguntas>
-                {cards.map((p,i)=><Pergunta key={i} numero={i+1} question={p.question} answer={p.answer}/>)}
+                {cards.map((p,i)=><Pergunta key={i} numero={i+1} question={p.question} answer={p.answer} aumentarQnt={props.aumentarQnt}/>)}
             </ContainerPerguntas>
 
         </>

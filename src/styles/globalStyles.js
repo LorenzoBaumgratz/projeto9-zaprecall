@@ -6,7 +6,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     body{
-		background-color: #fb6b6b;
+		background-color: gray;
     }
     html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
