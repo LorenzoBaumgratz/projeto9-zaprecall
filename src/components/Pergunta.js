@@ -19,7 +19,6 @@ export default function Pergunta(props) {
         setAbrir(false);
         setAbrirResposta(false);
         setRespondida(!respondida);
-        props.aumentarQnt();
         if (tipo === "Não") {
             setNao(!nao);
         }
@@ -67,13 +66,18 @@ export default function Pergunta(props) {
         }
     }
 
+    function abrirPergunta(){
+        props.aumentarQnt();
+        setAbrir(true);
+    }
+
 
 
     return (
         <>
             <CaixaPergunta data-test="flashcard" abrir={abrir} abrirResposta={abrirResposta} trocarPergunta={trocarPergunta} respondida={respondida}>
                 <span data-test="flashcard-text">Pergunta {props.numero}</span>
-                <img data-test={(respondida ? trocarDataTest() : "play-btn")} src={(respondida ? trocarIcone() : play)} alt="play" onClick={() => respondida ? "" : setAbrir(true)} />
+                <img data-test={(respondida ? trocarDataTest() : "play-btn")} src={(respondida ? trocarIcone() : play)} alt="play" onClick={() => respondida ? "" : abrirPergunta()} />
             </CaixaPergunta>
             <PerguntaAberta abrir={abrir} abrirResposta={abrirResposta}>
                 <span data-test="flashcard-text">{props.question}</span>

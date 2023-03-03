@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 export default function Inferior(props){
     return(
-        <CaixaInferior>
+        <CaixaInferior data-test="footer">
             <span>{props.quantidade}/{props.quantidadeTotal} CONCLUÍDOS</span>
         </CaixaInferior>
     )
