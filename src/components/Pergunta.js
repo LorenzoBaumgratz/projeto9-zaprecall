@@ -55,13 +55,25 @@ export default function Pergunta(props) {
         }
     }
 
-    
+    function trocarDataTest() {
+        if (zap) {
+            return "zap-icon";
+        }
+        if (quase) {
+            return "partial-icon";
+        }
+        if (nao) {
+            return "no-icon";
+        }
+    }
+
+
 
     return (
         <>
             <CaixaPergunta data-test="flashcard" abrir={abrir} abrirResposta={abrirResposta} trocarPergunta={trocarPergunta} respondida={respondida}>
                 <span data-test="flashcard-text">Pergunta {props.numero}</span>
-                <img data-test="play-btn" src={(respondida ? trocarIcone() : play)} alt="play" onClick={() => respondida?"":setAbrir(true)} />
+                <img data-test={(respondida ? trocarDataTest() : "play-btn")} src={(respondida ? trocarIcone() : play)} alt="play" onClick={() => respondida ? "" : setAbrir(true)} />
             </CaixaPergunta>
             <PerguntaAberta abrir={abrir} abrirResposta={abrirResposta}>
                 <span data-test="flashcard-text">{props.question}</span>
