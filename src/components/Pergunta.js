@@ -71,19 +71,17 @@ export default function Pergunta(props) {
         setAbrir(true);
     }
 
-
-
     return (
         <>
             <CaixaPergunta data-test="flashcard" abrir={abrir} abrirResposta={abrirResposta} trocarPergunta={trocarPergunta} respondida={respondida}>
                 <span data-test="flashcard-text">Pergunta {props.numero}</span>
                 <img data-test={(respondida ? trocarDataTest() : "play-btn")} src={(respondida ? trocarIcone() : play)} alt="play" onClick={() => respondida ? "" : abrirPergunta()} />
             </CaixaPergunta>
-            <PerguntaAberta abrir={abrir} abrirResposta={abrirResposta}>
+            <PerguntaAberta data-test="flashcard" abrir={abrir} abrirResposta={abrirResposta}>
                 <span data-test="flashcard-text">{props.question}</span>
                 <img data-test="turn-btn" src={virar} alt="icone" onClick={() => setAbrirResposta(true)} />
             </PerguntaAberta>
-            <Resposta abrir={abrir} abrirResposta={abrirResposta}>
+            <Resposta data-test="flashcard" abrir={abrir} abrirResposta={abrirResposta}>
                 <span data-test="flashcard-text">{props.answer}</span>
                 <CaixaBotoes>
                     <Button data-test="no-btn" cor={"#FF3030"} onClick={() => responder("Não")}>Não lembrei</Button>
